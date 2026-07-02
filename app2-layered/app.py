@@ -78,7 +78,7 @@ TEMPLATE = """
 </head>
 <body>
 <div class="wrap">
-  <h1>TaskFlow control <span class="badge-layer">v2 layered</span></h1>
+  <h1>Task control <span class="badge-layer">v2 layered</span></h1>
   <p class="sub">Same features as v1. Different inside.</p>
 
   <!-- Architecture note — visible during demo -->
@@ -205,4 +205,5 @@ if __name__ == "__main__":
     print("    repository.py — all data storage")
     print("    models.py     — Task class + TaskFactory")
     print("    strategies_and_observers.py — patterns\n")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    import os
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)),debug=False)
