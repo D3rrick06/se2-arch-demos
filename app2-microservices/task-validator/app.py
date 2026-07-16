@@ -48,6 +48,8 @@ def validate():
     Returns JSON:
         { "valid": true/false, "reason": "..." or null }
     """
+    import time
+    time.sleep(10)
     data = request.get_json()
 
     if not data:
